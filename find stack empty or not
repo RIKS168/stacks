@@ -1,0 +1,16 @@
+#include<iostream.h>
+#include<stack.h>
+// using namespace std----- if .h is not work then we use this statement
+int main(){
+  stack<int>n;
+  n.push(3);
+  n.push(5);
+  n.pop();
+  if(n.empty()){
+    cout<<"empty"<<endl;
+  }
+  else{
+    cout<<"not empty"<<endl;
+  }
+  return 0;
+}
