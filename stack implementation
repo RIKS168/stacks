@@ -1,0 +1,64 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include<stack>
+//using namesapce std;
+class Stack{
+    public:
+    int *arr;
+    int size;
+    int top;
+    Stack(int size){
+        this->size=size;
+        arr=new int[size];
+        top=-1;
+    }
+    void push(int ele){
+        if(size-top>1){
+            top++;
+            arr[top]=ele;
+        }
+        else{
+        std::    cout<<"stack overflow";
+        }
+    }
+        void pop(){
+            if(top>=0){
+                top--;
+            } 
+            else{
+             std::   cout<<"stack underflow;";
+            }
+        }
+    int peek()
+    {
+            if(top>=0)
+                return arr[top];
+            
+            else{
+                std::cout<<"stack is empty";
+                return -1;
+            }
+    }
+        
+        bool isEmpty(){
+            if(top==-1){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+    
+};
+int main() {
+    // Write C++ code here
+std::cout << "Try programiz.pro";
+Stack st(4);
+st.push(23);
+st.push(45);
+st.push(67);
+std::cout<<st.peek();
+st.pop();
+std::cout<<st.peek();
+    return 0;
+}
