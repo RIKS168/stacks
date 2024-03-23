@@ -1,0 +1,10 @@
+// stack using stl 
+#include<iostream.h>
+#include<stack>
+int main(){
+  stack<int>n;
+  n.push(3);
+  n.push(5);
+  cout<<n.pop()<<endl;
+  return 0;
+}
