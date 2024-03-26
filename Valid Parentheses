@@ -1,0 +1,34 @@
+bool isValidParenthesis(string s)
+{
+    stack<char>S ;
+    for (int i = 0; i < s.length(); i++) {
+      char ch=s[i];
+      // agr opening bracket h to stack m daal do
+      if (ch == '(' || ch == '{' || ch == '[') {
+          S.push(ch);
+      } 
+      // or agr opening braket nhi h to yh steps krne h
+      else {
+          // agr stack empty nhi h toh
+          if (!S.empty()) {
+              // agr stack ke top opeing braket or apne string ke current character par closing h to , stack ke current top ko pop krn h
+            char top = S.top();
+            if ((ch == ')' && top == '(') || (ch == '}' && top == '{') ||
+                (ch == ']' && top == '[')) {
+            S.pop();
+            } else {
+            
+            return false;
+            }
+          } else {
+          return false;
+          }
+      }
+    }
+    if (S.empty()) {
+     return true;
+    }
+    else{
+        return false;
+        }
+}
